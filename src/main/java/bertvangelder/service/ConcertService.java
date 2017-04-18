@@ -49,7 +49,8 @@ public class ConcertService {
             concertRepository = concertRepositoryFactory.createConcertRepository("sql");
             System.out.println("Using sql database");
         } catch (SQLException e) {
-            System.out.println("Using memory database" + e.getMessage());
+            System.out.println(e.getMessage());
+            System.out.println("Using memory database");
             artistRepository = artistRepositoryFactory.createArtistRepository("memory");
             venueRepository = venueRepositoryFactory.createVenueRepository("memory");
             concertRepository = concertRepositoryFactory.createConcertRepository("memory");
