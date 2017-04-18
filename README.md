@@ -6,7 +6,7 @@ Technologies used:
 
 Java v1.8
 Hibernate v5.0.0.Final
-mySQL v5.1.36
+mySQL v5.1.36 (database="concertDB";user="root";password="")
 spring boot v1.5.2.RELEASE
 
 
