@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+}
+
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Lato", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    color: #555;
+    line-height: 1.8;
+    font-size: 1em;
+}
+
+/* navigation */
+nav {
+    top:0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    background-color: white;
+}
+
+nav.on-top {
+    background: none;
+    color: #fff;
+}
+
+nav.scrolling {
+    background-color: #fff;
+    color:#000;
+    animation: animatetop 0.4s;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+nav a{
+    padding: 10px 20px;
+    float: right;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    color: inherit;
+}
+
+.on-top a:hover{
+    background-color: #222;
+}
+
+
+.scrolling a:hover{
+    background-color: #eee;
+}
+
+/*home div*/
+#home {
+    background-size: cover;
+    background: url('../img/concert.jpg') no-repeat fixed center;
+    min-height: 100%;
+    position: relative;
+}
+
+#title{
+    position: absolute;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #000;
+    border-radius: 25px;
+}
+
+#home h1{
+    letter-spacing: 10px;
+    color: #fff !important;
+    font-size: 24px !important;
+    animation: opac 1.5s;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+@keyframes opac{from{opacity:0} to{opacity:1}}
+
+/* classes to manage content divs */
+.container{
+    width: 100%;
+    position: relative;
+    min-height: 400px;
+    display: table;
+}
+
+.wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.content {
+    margin: 0 auto;
+    width: 800px;
+    padding:30px;
+}
+
+/* concert div */
+#concerts table{
+    margin: 30px 0;
+    width: 800px;
+}
+
+#concerts th {
+    text-align: left;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+#concerts td {
+    text-align: left;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+/* social-media div */
+#social-media{
+    position: fixed;
+    left:0;
+    top:500px;
+    z-index: 1;
+}
+
+#social-media img{
+    border: none;
+}
+
+/* parallax img */
+#transition {
+    background-size: cover;
+    background: url('../img/audience.jpg') no-repeat fixed center;
+    position: relative;
+    min-height: 400px;
+}
+
+/* about */
+
+#about hr{
+    width: 20%;
+    margin-bottom: 25px;
+}
+
+#about h2 {
+    letter-spacing: 5px;
+    color: #333;
+    font-size: 20px;
+    animation: opac 1.5s;
+    text-align: center;
+    font-weight: 600;
+}
+
+#about strong{
+    font-weight: 600;
+}
+
+#about p{
+    font-size: 1.1em;
+    text-align: justify;
+}
+
+/* footer */
+footer{
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-color: #111;
+}
+
+footer p{
+    padding-top: 170px;
+    text-align: center;
+}
+
+footer small{
+    color: #efd;
+    font-size: 0.9em;
+}

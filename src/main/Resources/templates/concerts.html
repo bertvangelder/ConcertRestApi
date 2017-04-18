@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Concerts in Belgium</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/concerts.css" th:href="@{css/concerts.css}" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/reset.css" th:href="@{css/reset.css}" />
+    <script type="text/javascript" src="../static/js/concerts.js" th:src="@{js/concerts.js}"></script>
+</head>
+<body>
+<nav class="on-top" id="nav">
+    <a href="#about">ABOUT</a>
+    <a href="#concerts">CONCERTS</a>
+    <a href="#home">HOME</a>
+</nav>
+
+<div id="social-media">
+    <ul>
+        <li>
+            <a target="_blank" title="find us on Facebook" href="http://www.facebook.com/">
+                <img alt="follow me on facebook" src="../static/img/fb.png" th:src="@{img/fb.png}"/>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" title="follow me on twitter" href="http://www.twitter.com/" >
+                <img alt="follow me on twitter" src="../static/img/twitter.png" th:src="@{img/twitter.png}"/>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div id="home">
+    <div id="title">
+        <h1>Concerts in Belgium</h1>
+    </div>
+</div>
+
+<div id="concerts" class="container">
+    <div class="wrapper">
+        <div class="content">
+            <table>
+                <tr>
+                    <th>NAME</th>
+                    <th>ARTIST</th>
+                    <th>VENUE</th>
+                    <th>LOCATION</th>
+                    <th>DATE</th>
+                    <th>TIME</th>
+                </tr>
+
+                <!--/*@thymesVar id="concerts" type="java.util.ArrayList<bertvangelder.model.Concert>"*/-->
+                <tr th:each="concert : ${concerts}">
+                    <td th:text="${concert.name}">Concert name</td>
+                    <td th:text="${concert.artist.name}">Artist name</td>
+                    <td th:text="${concert.venue.name}">Concert name</td>
+                    <td th:text="${concert.venue.location}">Concert location</td>
+                    <td th:text="${#temporals.format(concert.date, 'dd/MM/yyyy')}">15/04/2017</td>
+                    <td th:text="${concert.time}">21:00</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="transition"></div>
+<div id="about" class="container">
+    <div class="wrapper">
+        <div class="content">
+            <h2>ABOUT</h2>
+            <hr/>
+            <p><strong>Concerts in Belgium</strong> is a website where you can find all concerts in Belgium for the next year.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut purus elit, porttitor quis lobortis at, semper quis risus. Sed vel elit ut diam tristique ultricies. Morbi cursus ipsum eget elit ultricies, sed lacinia tellus porttitor. Vestibulum vitae semper lectus, pulvinar luctus libero. Praesent sodales ultrices vehicula. Nulla fermentum nibh sit amet semper iaculis. Sed ac libero ligula. Suspendisse quis odio quam. Ut congue, lacus pulvinar pulvinar hendrerit, est nunc semper ante, sed placerat mauris mi et arcu. Sed consectetur mollis tempor. Donec consequat tellus diam, nec pharetra ante luctus ac. Morbi pulvinar diam vitae condimentum porttitor. Vivamus dictum, ante ac iaculis efficitur, lacus tellus tempus magna, nec egestas ex leo eget ex. In iaculis, lectus ac aliquam varius, metus tortor facilisis magna, at faucibus risus nulla ut ipsum. Etiam maximus sollicitudin dui, imperdiet feugiat metus laoreet porta. Nulla vestibulum iaculis bibendum.</p>
+
+            <p>Vivamus mauris libero, pulvinar eget nunc pellentesque, volutpat maximus urna. Morbi tellus est, sagittis vitae pretium sit amet, malesuada ut metus. Morbi interdum in justo id cursus. Ut vulputate vel felis nec suscipit. Quisque arcu dui, suscipit in fringilla ut, ullamcorper ac augue. Ut aliquam ipsum vel justo gravida rhoncus. Nunc ut venenatis ex. Aliquam scelerisque euismod ante et pellentesque. Nullam ex metus, pulvinar nec eros ut, vulputate gravida metus. Fusce gravida sapien a pharetra fringilla. Sed risus leo, egestas quis pellentesque non, faucibus a turpis. Suspendisse molestie, erat sit amet tempus eleifend, nisl turpis tincidunt libero, ut commodo augue elit non felis. Suspendisse potenti. Vivamus fermentum vel urna eu euismod. Morbi sit amet porttitor velit. Donec et mauris nunc. </p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p><small>Copyright © 2017 Bert Van Gelder</small></p>
+</footer>
+
+</body>
+</html>
