@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body,h1,h2,h3,h4,h5,h6 {
+    font-family: "Lato", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    color: #555;
+    line-height: 1.8;
+    font-size: 1em;
+}
+
+/* navigation */
+nav {
+    top:0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    background: #222;
+    color: #fff;
+}
+
+
+nav a{
+    padding: 10px 20px;
+    float: right;
+    width: auto;
+    border: none;
+    outline: none;
+    display: block;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    color: inherit;
+}
+
+#addConcert {
+    margin-top:100px;
+}
+
+input[type=text], select, input[type=date], input[type=time] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical
+}
+
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+#addConcert .error {
+    color: red;
+    margin-top: 16px;
+    margin-bottom: 6px;
+}
+
+.content {
+    margin: 0 auto;
+    width: 800px;
+    padding:30px;
+}
+
+h1{
+    letter-spacing: 10px;
+    color: #000 !important;
+    font-size: 24px !important;
+    animation: opac 1.5s;
+    padding: 20px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 100px 0 25px 0;
+}
+
+/* social-media div */
+#social-media{
+    position: fixed;
+    left:0;
+    top:500px;
+    z-index: 1;
+}
+
+/* footer */
+footer{
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background-color: #111;
+}
+
+footer p{
+    padding-top: 70px;
+    text-align: center;
+}
+
+footer small{
+    color: #efd;
+    font-size: 0.9em;
+}

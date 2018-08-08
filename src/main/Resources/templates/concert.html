@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Concerts in Belgium</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/addConcert.css" th:href="@{css/addConcert.css}" />
+    <link rel="stylesheet" type="text/css" media="all"
+          href="../static/css/reset.css" th:href="@{css/reset.css}" />
+    <script type="text/javascript" src="../static/js/concerts.js" th:src="@{js/concerts.js}"></script>
+</head>
+<body>
+<nav id="nav">
+    <a th:href="@{/}">HOME</a>
+</nav>
+
+<div id="social-media">
+    <ul>
+        <li>
+            <a target="_blank" title="find us on Facebook" href="http://www.facebook.com/">
+                <img alt="follow me on facebook" src="../static/img/fb.png" th:src="@{img/fb.png}"/>
+            </a>
+        </li>
+        <li>
+            <a target="_blank" title="follow me on twitter" href="http://www.twitter.com/" >
+                <img alt="follow me on twitter" src="../static/img/twitter.png" th:src="@{img/twitter.png}"/>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="content" id="addConcert">
+
+        <h1>Add Concert</h1>
+        <form action="#" th:action="@{/addConcert}" th:object="${concertForm}" method="post">
+            <p class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+            <label for="concertName">Name of the concert:</label>
+            <input type="text" th:field="*{name}" name="concertName" id="concertName" required="required" autofocus="autofocus"/>
+
+
+            <label for="artistName">Name of the artist:</label>
+            <select th:field="*{artistId}" id="artistName" name="artistName">
+                <option
+                        th:each="artist: ${allArtists}"
+                        th:value="${artist.artistId}"
+                        th:text="${artist.name}" ></option>
+            </select>
+            <label for="venueName">Name of the venue:</label>
+            <select th:field="*{venueId}" id="venueName" name="venueName">
+                <option
+                        th:each="venue: ${allVenues}"
+                        th:value="${venue.venueId}"
+                        th:text="${venue.name}" ></option>
+            </select>
+            <p class="error" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></p>
+            <label for="concertDate">Date of the concert:</label>
+            <input type="date" th:field="*{date}" name="concertDate" id="concertDate" required="required" />
+            <label for="concertTime">Time of the concert:</label>
+            <input type="time" th:field="*{time}" name="concertDate" id="concertTime" required="required" />
+            <input type="submit" value="ADD"/>
+        </form>
+</div>
+
+
+<footer>
+    <p><small>Copyright © 2017 Bert Van Gelder</small></p>
+</footer>
+
+</body>
+</html>
